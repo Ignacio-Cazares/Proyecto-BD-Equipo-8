@@ -1,9 +1,9 @@
 # Proyecto-BD-Equipo-8
 
 ## Integrantes
-1.- José Ignacio Cázares Bocanegra
-2.- Brandon Adrián Becerra Gómez
-2.- Agustin Gradilla
+1. José Ignacio Cázares Bocanegra
+2. Brandon Adrián Becerra Gómez
+3. Agustin Gradilla
 
 ## Descripción del proyecto
 Este proyecto consiste en desarrollar un Sistema de Gestión de Restaurantes y Pedidos que permita consultar información sobre restaurantes, menús, clientes y pedidos, así como consultar historiales de actividad y generar recomendaciones basadas en las preferencias de los clientes.
