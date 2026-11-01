@@ -1,0 +1,5 @@
+cassandra-driver==3.29.3
+click==8.1.8
+dnspython==2.7.0
+geomet==1.1.0
+pymongo==4.18.3
