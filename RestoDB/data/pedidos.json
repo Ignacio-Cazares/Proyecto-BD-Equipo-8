@@ -1,0 +1,263 @@
+
+[
+  {
+    "_id": "690000000000000000000301",
+    "restaurante_id": "690000000000000000000001",
+    "cliente_id": "690000000000000000000101",
+    "nombre_restaurante": "La Cocina del Centro",
+    "fecha": "2026-10-03T13:10:00Z",
+    "estado": "entregado",
+    "total": 220.0,
+    "items": [
+      {"platillo_id": "690000000000000000000201", "nombre": "Tacos al pastor", "precio_unitario": 90.0, "cantidad": 2, "subtotal": 180.0},
+      {"platillo_id": "690000000000000000000204", "nombre": "Agua de horchata", "precio_unitario": 40.0, "cantidad": 1, "subtotal": 40.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000302",
+    "restaurante_id": "690000000000000000000001",
+    "cliente_id": "690000000000000000000102",
+    "nombre_restaurante": "La Cocina del Centro",
+    "fecha": "2026-10-03T13:35:00Z",
+    "estado": "entregado",
+    "total": 185.0,
+    "items": [
+      {"platillo_id": "690000000000000000000202", "nombre": "Enchiladas verdes", "precio_unitario": 125.0, "cantidad": 1, "subtotal": 125.0},
+      {"platillo_id": "690000000000000000000205", "nombre": "Flan napolitano", "precio_unitario": 60.0, "cantidad": 1, "subtotal": 60.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000303",
+    "restaurante_id": "690000000000000000000002",
+    "cliente_id": "690000000000000000000101",
+    "nombre_restaurante": "Taquería del Barrio",
+    "fecha": "2026-10-04T19:00:00Z",
+    "estado": "entregado",
+    "total": 331.0,
+    "items": [
+      {"platillo_id": "690000000000000000000206", "nombre": "Tacos al pastor", "precio_unitario": 85.0, "cantidad": 3, "subtotal": 255.0},
+      {"platillo_id": "690000000000000000000210", "nombre": "Agua de jamaica", "precio_unitario": 38.0, "cantidad": 2, "subtotal": 76.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000304",
+    "restaurante_id": "690000000000000000000003",
+    "cliente_id": "690000000000000000000103",
+    "nombre_restaurante": "Trattoria Roma",
+    "fecha": "2026-10-05T14:20:00Z",
+    "estado": "entregado",
+    "total": 255.0,
+    "items": [
+      {"platillo_id": "690000000000000000000211", "nombre": "Pizza Margarita", "precio_unitario": 185.0, "cantidad": 1, "subtotal": 185.0},
+      {"platillo_id": "690000000000000000000215", "nombre": "Agua mineral", "precio_unitario": 35.0, "cantidad": 2, "subtotal": 70.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000305",
+    "restaurante_id": "690000000000000000000004",
+    "cliente_id": "690000000000000000000104",
+    "nombre_restaurante": "Sakura Sushi",
+    "fecha": "2026-10-07T20:15:00Z",
+    "estado": "cancelado",
+    "total": 355.0,
+    "items": [
+      {"platillo_id": "690000000000000000000216", "nombre": "California Roll", "precio_unitario": 155.0, "cantidad": 2, "subtotal": 310.0},
+      {"platillo_id": "690000000000000000000220", "nombre": "Té verde", "precio_unitario": 45.0, "cantidad": 1, "subtotal": 45.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000306",
+    "restaurante_id": "690000000000000000000001",
+    "cliente_id": "690000000000000000000101",
+    "nombre_restaurante": "La Cocina del Centro",
+    "fecha": "2026-10-10T13:45:00Z",
+    "estado": "entregado",
+    "total": 175.0,
+    "items": [
+      {"platillo_id": "690000000000000000000203", "nombre": "Pozole rojo", "precio_unitario": 135.0, "cantidad": 1, "subtotal": 135.0},
+      {"platillo_id": "690000000000000000000204", "nombre": "Agua de horchata", "precio_unitario": 40.0, "cantidad": 1, "subtotal": 40.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000307",
+    "restaurante_id": "690000000000000000000001",
+    "cliente_id": "690000000000000000000105",
+    "nombre_restaurante": "La Cocina del Centro",
+    "fecha": "2026-10-10T14:05:00Z",
+    "estado": "entregado",
+    "total": 215.0,
+    "items": [
+      {"platillo_id": "690000000000000000000201", "nombre": "Tacos al pastor", "precio_unitario": 90.0, "cantidad": 1, "subtotal": 90.0},
+      {"platillo_id": "690000000000000000000202", "nombre": "Enchiladas verdes", "precio_unitario": 125.0, "cantidad": 1, "subtotal": 125.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000308",
+    "restaurante_id": "690000000000000000000003",
+    "cliente_id": "690000000000000000000102",
+    "nombre_restaurante": "Trattoria Roma",
+    "fecha": "2026-10-11T20:00:00Z",
+    "estado": "entregado",
+    "total": 465.0,
+    "items": [
+      {"platillo_id": "690000000000000000000211", "nombre": "Pizza Margarita", "precio_unitario": 185.0, "cantidad": 2, "subtotal": 370.0},
+      {"platillo_id": "690000000000000000000214", "nombre": "Tiramisú", "precio_unitario": 95.0, "cantidad": 1, "subtotal": 95.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000309",
+    "restaurante_id": "690000000000000000000002",
+    "cliente_id": "690000000000000000000106",
+    "nombre_restaurante": "Taquería del Barrio",
+    "fecha": "2026-10-14T14:15:00Z",
+    "estado": "entregado",
+    "total": 295.0,
+    "items": [
+      {"platillo_id": "690000000000000000000207", "nombre": "Quesadillas", "precio_unitario": 75.0, "cantidad": 2, "subtotal": 150.0},
+      {"platillo_id": "690000000000000000000208", "nombre": "Alambre de res", "precio_unitario": 145.0, "cantidad": 1, "subtotal": 145.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000310",
+    "restaurante_id": "690000000000000000000004",
+    "cliente_id": "690000000000000000000107",
+    "nombre_restaurante": "Sakura Sushi",
+    "fecha": "2026-10-18T20:05:00Z",
+    "estado": "entregado",
+    "total": 290.0,
+    "items": [
+      {"platillo_id": "690000000000000000000217", "nombre": "Ramen", "precio_unitario": 180.0, "cantidad": 1, "subtotal": 180.0},
+      {"platillo_id": "690000000000000000000219", "nombre": "Gyozas", "precio_unitario": 110.0, "cantidad": 1, "subtotal": 110.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000311",
+    "restaurante_id": "690000000000000000000001",
+    "cliente_id": "690000000000000000000104",
+    "nombre_restaurante": "La Cocina del Centro",
+    "fecha": "2026-10-21T13:25:00Z",
+    "estado": "entregado",
+    "total": 310.0,
+    "items": [
+      {"platillo_id": "690000000000000000000202", "nombre": "Enchiladas verdes", "precio_unitario": 125.0, "cantidad": 2, "subtotal": 250.0},
+      {"platillo_id": "690000000000000000000205", "nombre": "Flan napolitano", "precio_unitario": 60.0, "cantidad": 1, "subtotal": 60.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000312",
+    "restaurante_id": "690000000000000000000003",
+    "cliente_id": "690000000000000000000103",
+    "nombre_restaurante": "Trattoria Roma",
+    "fecha": "2026-10-26T20:40:00Z",
+    "estado": "entregado",
+    "total": 360.0,
+    "items": [
+      {"platillo_id": "690000000000000000000212", "nombre": "Pasta Alfredo", "precio_unitario": 165.0, "cantidad": 1, "subtotal": 165.0},
+      {"platillo_id": "690000000000000000000213", "nombre": "Lasaña", "precio_unitario": 195.0, "cantidad": 1, "subtotal": 195.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000313",
+    "restaurante_id": "690000000000000000000002",
+    "cliente_id": "690000000000000000000108",
+    "nombre_restaurante": "Taquería del Barrio",
+    "fecha": "2026-11-02T13:05:00Z",
+    "estado": "entregado",
+    "total": 265.0,
+    "items": [
+      {"platillo_id": "690000000000000000000206", "nombre": "Tacos al pastor", "precio_unitario": 85.0, "cantidad": 2, "subtotal": 170.0},
+      {"platillo_id": "690000000000000000000209", "nombre": "Guacamole", "precio_unitario": 95.0, "cantidad": 1, "subtotal": 95.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000314",
+    "restaurante_id": "690000000000000000000004",
+    "cliente_id": "690000000000000000000106",
+    "nombre_restaurante": "Sakura Sushi",
+    "fecha": "2026-11-05T21:15:00Z",
+    "estado": "entregado",
+    "total": 300.0,
+    "items": [
+      {"platillo_id": "690000000000000000000216", "nombre": "California Roll", "precio_unitario": 155.0, "cantidad": 1, "subtotal": 155.0},
+      {"platillo_id": "690000000000000000000218", "nombre": "Nigiri de salmón", "precio_unitario": 145.0, "cantidad": 1, "subtotal": 145.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000315",
+    "restaurante_id": "690000000000000000000001",
+    "cliente_id": "690000000000000000000101",
+    "nombre_restaurante": "La Cocina del Centro",
+    "fecha": "2026-11-10T13:15:00Z",
+    "estado": "entregado",
+    "total": 150.0,
+    "items": [
+      {"platillo_id": "690000000000000000000201", "nombre": "Tacos al pastor", "precio_unitario": 90.0, "cantidad": 1, "subtotal": 90.0},
+      {"platillo_id": "690000000000000000000205", "nombre": "Flan napolitano", "precio_unitario": 60.0, "cantidad": 1, "subtotal": 60.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000316",
+    "restaurante_id": "690000000000000000000003",
+    "cliente_id": "690000000000000000000105",
+    "nombre_restaurante": "Trattoria Roma",
+    "fecha": "2026-11-12T20:00:00Z",
+    "estado": "entregado",
+    "total": 220.0,
+    "items": [
+      {"platillo_id": "690000000000000000000211", "nombre": "Pizza Margarita", "precio_unitario": 185.0, "cantidad": 1, "subtotal": 185.0},
+      {"platillo_id": "690000000000000000000215", "nombre": "Agua mineral", "precio_unitario": 35.0, "cantidad": 1, "subtotal": 35.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000317",
+    "restaurante_id": "690000000000000000000002",
+    "cliente_id": "690000000000000000000102",
+    "nombre_restaurante": "Taquería del Barrio",
+    "fecha": "2026-11-13T12:10:00Z",
+    "estado": "listo",
+    "total": 220.0,
+    "items": [
+      {"platillo_id": "690000000000000000000207", "nombre": "Quesadillas", "precio_unitario": 75.0, "cantidad": 1, "subtotal": 75.0},
+      {"platillo_id": "690000000000000000000208", "nombre": "Alambre de res", "precio_unitario": 145.0, "cantidad": 1, "subtotal": 145.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000318",
+    "restaurante_id": "690000000000000000000002",
+    "cliente_id": "690000000000000000000103",
+    "nombre_restaurante": "Taquería del Barrio",
+    "fecha": "2026-11-13T12:15:00Z",
+    "estado": "en preparación",
+    "total": 123.0,
+    "items": [
+      {"platillo_id": "690000000000000000000206", "nombre": "Tacos al pastor", "precio_unitario": 85.0, "cantidad": 1, "subtotal": 85.0},
+      {"platillo_id": "690000000000000000000210", "nombre": "Agua de jamaica", "precio_unitario": 38.0, "cantidad": 1, "subtotal": 38.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000319",
+    "restaurante_id": "690000000000000000000004",
+    "cliente_id": "690000000000000000000104",
+    "nombre_restaurante": "Sakura Sushi",
+    "fecha": "2026-11-13T20:30:00Z",
+    "estado": "pendiente",
+    "total": 270.0,
+    "items": [
+      {"platillo_id": "690000000000000000000217", "nombre": "Ramen", "precio_unitario": 180.0, "cantidad": 1, "subtotal": 180.0},
+      {"platillo_id": "690000000000000000000220", "nombre": "Té verde", "precio_unitario": 45.0, "cantidad": 2, "subtotal": 90.0}
+    ]
+  },
+  {
+    "_id": "690000000000000000000320",
+    "restaurante_id": "690000000000000000000004",
+    "cliente_id": "690000000000000000000107",
+    "nombre_restaurante": "Sakura Sushi",
+    "fecha": "2026-11-13T20:40:00Z",
+    "estado": "cancelado",
+    "total": 265.0,
+    "items": [
+      {"platillo_id": "690000000000000000000219", "nombre": "Gyozas", "precio_unitario": 110.0, "cantidad": 2, "subtotal": 220.0},
+      {"platillo_id": "690000000000000000000220", "nombre": "Té verde", "precio_unitario": 45.0, "cantidad": 1, "subtotal": 45.0}
+    ]
+  }
+]

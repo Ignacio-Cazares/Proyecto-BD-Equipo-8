@@ -1,0 +1,59 @@
+
+[
+  {
+    "_id": "690000000000000000000101",
+    "nombre": "Ana Martínez",
+    "numero_telefono": "3311110001",
+    "email": "ana.martinez@example.com",
+    "fecha_registro": "2026-09-15T10:00:00Z"
+  },
+  {
+    "_id": "690000000000000000000102",
+    "nombre": "Luis Ramírez",
+    "numero_telefono": "3311110002",
+    "email": "luis.ramirez@example.com",
+    "fecha_registro": "2026-09-17T11:30:00Z"
+  },
+  {
+    "_id": "690000000000000000000103",
+    "nombre": "Sofía Torres",
+    "numero_telefono": "3311110003",
+    "email": "sofia.torres@example.com",
+    "fecha_registro": "2026-09-20T09:45:00Z"
+  },
+  {
+    "_id": "690000000000000000000104",
+    "nombre": "Diego Herrera",
+    "numero_telefono": "3311110004",
+    "email": "diego.herrera@example.com",
+    "fecha_registro": "2026-09-22T14:00:00Z"
+  },
+  {
+    "_id": "690000000000000000000105",
+    "nombre": "Valeria Gómez",
+    "numero_telefono": "3311110005",
+    "email": "valeria.gomez@example.com",
+    "fecha_registro": "2026-09-24T12:15:00Z"
+  },
+  {
+    "_id": "690000000000000000000106",
+    "nombre": "Carlos Medina",
+    "numero_telefono": "3311110006",
+    "email": "carlos.medina@example.com",
+    "fecha_registro": "2026-09-26T16:30:00Z"
+  },
+  {
+    "_id": "690000000000000000000107",
+    "nombre": "Fernanda Ruiz",
+    "numero_telefono": "3311110007",
+    "email": "fernanda.ruiz@example.com",
+    "fecha_registro": "2026-09-28T13:20:00Z"
+  },
+  {
+    "_id": "690000000000000000000108",
+    "nombre": "Jorge Navarro",
+    "numero_telefono": "3311110008",
+    "email": "jorge.navarro@example.com",
+    "fecha_registro": "2026-09-30T17:00:00Z"
+  }
+]

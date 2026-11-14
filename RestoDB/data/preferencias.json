@@ -1,0 +1,91 @@
+
+[
+  {
+    "cliente_id": "690000000000000000000101",
+    "restaurantes_favoritos": [
+      "690000000000000000000001"
+    ],
+    "platillos_favoritos": [
+      "690000000000000000000201",
+      "690000000000000000000206"
+    ],
+    "tipos_comida_preferidos": ["Mexicana"]
+  },
+  {
+    "cliente_id": "690000000000000000000102",
+    "restaurantes_favoritos": [
+      "690000000000000000000002"
+    ],
+    "platillos_favoritos": [
+      "690000000000000000000201",
+      "690000000000000000000202"
+    ],
+    "tipos_comida_preferidos": ["Mexicana", "Italiana"]
+  },
+  {
+    "cliente_id": "690000000000000000000103",
+    "restaurantes_favoritos": [
+      "690000000000000000000003"
+    ],
+    "platillos_favoritos": [
+      "690000000000000000000211",
+      "690000000000000000000212"
+    ],
+    "tipos_comida_preferidos": ["Italiana", "Japonesa"]
+  },
+  {
+    "cliente_id": "690000000000000000000104",
+    "restaurantes_favoritos": [
+      "690000000000000000000004"
+    ],
+    "platillos_favoritos": [
+      "690000000000000000000216",
+      "690000000000000000000217"
+    ],
+    "tipos_comida_preferidos": ["Japonesa"]
+  },
+  {
+    "cliente_id": "690000000000000000000105",
+    "restaurantes_favoritos": [
+      "690000000000000000000001"
+    ],
+    "platillos_favoritos": [
+      "690000000000000000000201",
+      "690000000000000000000203"
+    ],
+    "tipos_comida_preferidos": ["Mexicana", "Italiana"]
+  },
+  {
+    "cliente_id": "690000000000000000000106",
+    "restaurantes_favoritos": [
+      "690000000000000000000002"
+    ],
+    "platillos_favoritos": [
+      "690000000000000000000206",
+      "690000000000000000000211"
+    ],
+    "tipos_comida_preferidos": ["Mexicana", "Italiana"]
+  },
+  {
+    "cliente_id": "690000000000000000000107",
+    "restaurantes_favoritos": [
+      "690000000000000000000004"
+    ],
+    "platillos_favoritos": [
+      "690000000000000000000217",
+      "690000000000000000000216"
+    ],
+    "tipos_comida_preferidos": ["Japonesa"]
+  },
+  {
+    "cliente_id": "690000000000000000000108",
+    "restaurantes_favoritos": [
+      "690000000000000000000002"
+    ],
+    "platillos_favoritos": [
+      "690000000000000000000206",
+      "690000000000000000000207"
+    ],
+    "tipos_comida_preferidos": ["Mexicana"]
+  }
+]

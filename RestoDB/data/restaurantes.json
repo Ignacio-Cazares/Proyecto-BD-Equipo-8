@@ -1,0 +1,199 @@
+
+[
+  {
+    "_id": "690000000000000000000001",
+    "nombre": "La Cocina del Centro",
+    "tipo_comida": "Mexicana",
+    "descripcion": "Restaurante de comida mexicana tradicional",
+    "activo": true,
+    "menu": [
+      {
+        "platillo_id": "690000000000000000000201",
+        "nombre": "Tacos al pastor",
+        "descripcion": "Orden de tacos con piña",
+        "categoria": "Plato fuerte",
+        "precio": 90.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000202",
+        "nombre": "Enchiladas verdes",
+        "descripcion": "Enchiladas de pollo con salsa verde",
+        "categoria": "Plato fuerte",
+        "precio": 125.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000203",
+        "nombre": "Pozole rojo",
+        "descripcion": "Pozole tradicional con carne de cerdo",
+        "categoria": "Plato fuerte",
+        "precio": 135.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000204",
+        "nombre": "Agua de horchata",
+        "descripcion": "Bebida de arroz con canela",
+        "categoria": "Bebida",
+        "precio": 40.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000205",
+        "nombre": "Flan napolitano",
+        "descripcion": "Postre de caramelo",
+        "categoria": "Postre",
+        "precio": 60.0,
+        "disponible": true
+      }
+    ]
+  },
+  {
+    "_id": "690000000000000000000002",
+    "nombre": "Taquería del Barrio",
+    "tipo_comida": "Mexicana",
+    "descripcion": "Taquería especializada en comida mexicana",
+    "activo": true,
+    "menu": [
+      {
+        "platillo_id": "690000000000000000000206",
+        "nombre": "Tacos al pastor",
+        "descripcion": "Tacos de cerdo adobado",
+        "categoria": "Plato fuerte",
+        "precio": 85.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000207",
+        "nombre": "Quesadillas",
+        "descripcion": "Tortillas con queso derretido",
+        "categoria": "Entrada",
+        "precio": 75.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000208",
+        "nombre": "Alambre de res",
+        "descripcion": "Carne de res con verduras y queso",
+        "categoria": "Plato fuerte",
+        "precio": 145.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000209",
+        "nombre": "Guacamole",
+        "descripcion": "Aguacate preparado con limón y cilantro",
+        "categoria": "Entrada",
+        "precio": 95.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000210",
+        "nombre": "Agua de jamaica",
+        "descripcion": "Bebida natural de flor de jamaica",
+        "categoria": "Bebida",
+        "precio": 38.0,
+        "disponible": true
+      }
+    ]
+  },
+  {
+    "_id": "690000000000000000000003",
+    "nombre": "Trattoria Roma",
+    "tipo_comida": "Italiana",
+    "descripcion": "Restaurante de especialidades italianas",
+    "activo": true,
+    "menu": [
+      {
+        "platillo_id": "690000000000000000000211",
+        "nombre": "Pizza Margarita",
+        "descripcion": "Pizza con tomate, mozzarella y albahaca",
+        "categoria": "Plato fuerte",
+        "precio": 185.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000212",
+        "nombre": "Pasta Alfredo",
+        "descripcion": "Pasta con salsa cremosa",
+        "categoria": "Plato fuerte",
+        "precio": 165.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000213",
+        "nombre": "Lasaña",
+        "descripcion": "Lasaña de carne con queso",
+        "categoria": "Plato fuerte",
+        "precio": 195.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000214",
+        "nombre": "Tiramisú",
+        "descripcion": "Postre italiano de café",
+        "categoria": "Postre",
+        "precio": 95.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000215",
+        "nombre": "Agua mineral",
+        "descripcion": "Bebida mineral",
+        "categoria": "Bebida",
+        "precio": 35.0,
+        "disponible": true
+      }
+    ]
+  },
+  {
+    "_id": "690000000000000000000004",
+    "nombre": "Sakura Sushi",
+    "tipo_comida": "Japonesa",
+    "descripcion": "Restaurante de sushi y cocina japonesa",
+    "activo": true,
+    "menu": [
+      {
+        "platillo_id": "690000000000000000000216",
+        "nombre": "California Roll",
+        "descripcion": "Rollo de sushi con aguacate y surimi",
+        "categoria": "Plato fuerte",
+        "precio": 155.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000217",
+        "nombre": "Ramen",
+        "descripcion": "Sopa japonesa con fideos y carne",
+        "categoria": "Plato fuerte",
+        "precio": 180.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000218",
+        "nombre": "Nigiri de salmón",
+        "descripcion": "Arroz de sushi con salmón fresco",
+        "categoria": "Plato fuerte",
+        "precio": 145.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000219",
+        "nombre": "Gyozas",
+        "descripcion": "Empanadillas japonesas",
+        "categoria": "Entrada",
+        "precio": 110.0,
+        "disponible": true
+      },
+      {
+        "platillo_id": "690000000000000000000220",
+        "nombre": "Té verde",
+        "descripcion": "Infusión japonesa de té verde",
+        "categoria": "Bebida",
+        "precio": 45.0,
+        "disponible": true
+      }
+    ]
+  }
+]
