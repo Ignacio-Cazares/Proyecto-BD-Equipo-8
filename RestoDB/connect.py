@@ -19,6 +19,15 @@ def connect_cassandra():
     print("Cassandra connected successfully")
     return cluster, session
 
+def connect_dgraph():
+    client_stub = pydgraph.DgraphClientStub('localhost:9080')
+    client = pydgraph.DgraphClient(client_stub)
+
+    client.check_version()
+
+    print("Dgraph connected successfully")
+    return client_stub, client
+
 
 if __name__ == "__main__":
     mongo_client = None
