@@ -4,9 +4,10 @@ from pathlib import Path
 from datetime import datetime, timezone
 from decimal import Decimal
 from uuid import UUID, uuid5, NAMESPACE_URL
+import pydgraph
 
 from bson import ObjectId
-from connect import connect_mongodb, connect_cassandra
+from connect import connect_mongodb, connect_cassandra, connect_dgraph
 
 
 # Carpeta donde están almacenados nuestros JSON
@@ -504,11 +505,286 @@ def poblar_cassandra(datos):
             cluster.shutdown()
 
 
+def preparar_dgraph(client):
+    esquema = """
+        cliente_id: string @index(exact) @upsert .
+        restaurante_id: string @index(exact) @upsert .
+        platillo_id: string @index(exact) @upsert .
+        tipo_id: string @index(exact) @upsert .
+
+        nombre: string @index(exact, term) .
+        email: string .
+        numero_telefono: string .
+        fecha_registro: datetime .
+        descripcion: string .
+        activo: bool .
+        categoria: string .
+        precio: float .
+
+        ofrece: [uid] @reverse .
+        tipo_comida: uid @reverse .
+        platillo_favorito: [uid] @reverse .
+        restaurante_favorito: [uid] .
+        prefiere_tipo: [uid] .
+
+        type Cliente {
+            cliente_id
+            nombre
+            email
+            numero_telefono
+            fecha_registro
+            platillo_favorito
+            restaurante_favorito
+            prefiere_tipo
+        }
+
+        type Restaurante {
+            restaurante_id
+            nombre
+            descripcion
+            activo
+            ofrece
+            tipo_comida
+        }
+
+        type Platillo {
+            platillo_id
+            nombre
+            descripcion
+            categoria
+            precio
+        }
+
+        type TipoComida {
+            tipo_id
+            nombre
+        }
+    """
+
+    client.alter(pydgraph.Operation(schema=esquema))
+
+    print("Esquema Dgraph preparado correctamente.")
+
+
+def consultar_uids_dgraph(client, tipo, campo_id):
+    consulta = f"""
+    {{
+        nodos(func: type({tipo})) {{
+            uid
+            {campo_id}
+        }}
+    }}
+    """
+
+    txn = client.txn(read_only=True)
+
+    try:
+        respuesta = txn.query(consulta)
+        registros = json.loads(respuesta.json).get("nodos", [])
+
+        return {
+            registro[campo_id]: registro["uid"]
+            for registro in registros
+            if campo_id in registro
+        }
+
+    finally:
+        txn.discard()
+
+
+def preparar_uids_dgraph(
+    client, tipo, campo_id, identificadores, prefijo
+):
+    existentes = consultar_uids_dgraph(
+        client, tipo, campo_id
+    )
+
+    uids = {}
+
+    for numero, identificador in enumerate(
+        identificadores, start=1
+    ):
+        if identificador in existentes:
+            uids[identificador] = existentes[identificador]
+        else:
+            uids[identificador] = f"_:{prefijo}{numero}"
+
+    return uids
+
 
 def poblar_dgraph(datos):
-    # Pendiente de implementar junto con la conexión
-    # y la carga de nodos y relaciones de Dgraph.
-    print("Dgraph: carga pendiente de implementar.")
+    stub = None
+
+    try:
+        # 1. Conectar y preparar el esquema
+        stub, client = connect_dgraph()
+        preparar_dgraph(client)
+
+        restaurantes = datos["restaurantes"]
+        clientes = datos["clientes"]
+
+        # Extraer los platillos de los restaurantes
+        platillos = [
+            platillo
+            for restaurante in restaurantes
+            for platillo in restaurante["menu"]
+        ]
+
+        # Obtener los tipos de comida sin repetirlos
+        tipos_comida = sorted({
+            restaurante["tipo_comida"]
+            for restaurante in restaurantes
+        })
+
+        # 2. Preparar identificadores UID
+        uids_clientes = preparar_uids_dgraph(
+            client,
+            "Cliente",
+            "cliente_id",
+            [c["_id"] for c in clientes],
+            "cliente"
+        )
+
+        uids_restaurantes = preparar_uids_dgraph(
+            client,
+            "Restaurante",
+            "restaurante_id",
+            [r["_id"] for r in restaurantes],
+            "restaurante"
+        )
+
+        uids_platillos = preparar_uids_dgraph(
+            client,
+            "Platillo",
+            "platillo_id",
+            [p["platillo_id"] for p in platillos],
+            "platillo"
+        )
+
+        uids_tipos = preparar_uids_dgraph(
+            client,
+            "TipoComida",
+            "tipo_id",
+            tipos_comida,
+            "tipo"
+        )
+
+        # 3. Preparar todos los nodos
+        nodos = []
+
+        # Tipos de comida
+        for tipo in tipos_comida:
+            nodos.append({
+                "uid": uids_tipos[tipo],
+                "dgraph.type": "TipoComida",
+                "tipo_id": tipo,
+                "nombre": tipo
+            })
+
+        # Platillos
+        for platillo in platillos:
+            nodos.append({
+                "uid": uids_platillos[
+                    platillo["platillo_id"]
+                ],
+                "dgraph.type": "Platillo",
+                "platillo_id": platillo["platillo_id"],
+                "nombre": platillo["nombre"],
+                "descripcion": platillo["descripcion"],
+                "categoria": platillo["categoria"],
+                "precio": platillo["precio"]
+            })
+
+        # Restaurantes y sus relaciones
+        for restaurante in restaurantes:
+            nodos.append({
+                "uid": uids_restaurantes[
+                    restaurante["_id"]
+                ],
+                "dgraph.type": "Restaurante",
+                "restaurante_id": restaurante["_id"],
+                "nombre": restaurante["nombre"],
+                "descripcion": restaurante["descripcion"],
+                "activo": restaurante["activo"],
+
+                "tipo_comida": {
+                    "uid": uids_tipos[
+                        restaurante["tipo_comida"]
+                    ]
+                },
+
+                "ofrece": [
+                    {
+                        "uid": uids_platillos[
+                            platillo["platillo_id"]
+                        ]
+                    }
+                    for platillo in restaurante["menu"]
+                ]
+            })
+
+        # Organizar las preferencias por cliente
+        preferencias = {
+            p["cliente_id"]: p
+            for p in datos["preferencias"]
+        }
+
+        # Clientes y sus relaciones de preferencias
+        for cliente in clientes:
+            preferencia = preferencias[cliente["_id"]]
+
+            nodos.append({
+                "uid": uids_clientes[cliente["_id"]],
+                "dgraph.type": "Cliente",
+                "cliente_id": cliente["_id"],
+                "nombre": cliente["nombre"],
+                "email": cliente["email"],
+                "numero_telefono": cliente["numero_telefono"],
+                "fecha_registro": cliente["fecha_registro"],
+
+                "restaurante_favorito": [
+                    {
+                        "uid": uids_restaurantes[id_restaurante]
+                    }
+                    for id_restaurante in
+                    preferencia["restaurantes_favoritos"]
+                ],
+
+                "platillo_favorito": [
+                    {
+                        "uid": uids_platillos[id_platillo]
+                    }
+                    for id_platillo in
+                    preferencia["platillos_favoritos"]
+                ],
+
+                "prefiere_tipo": [
+                    {
+                        "uid": uids_tipos[tipo]
+                    }
+                    for tipo in
+                    preferencia["tipos_comida_preferidos"]
+                ]
+            })
+
+        # 4. Insertar nodos y relaciones
+        txn = client.txn()
+
+        try:
+            txn.mutate(set_obj=nodos)
+            txn.commit()
+        finally:
+            txn.discard()
+
+        print(f"Nodos procesados en Dgraph: {len(nodos)}")
+        print("Relaciones de Dgraph cargadas correctamente.")
+        print("Dgraph poblado correctamente.")
+
+    finally:
+        if stub is not None:
+            stub.close()
+
+
 
 
 def main():
@@ -518,8 +794,8 @@ def main():
 
     parser.add_argument(
         "--solo",
-        choices=["mongodb", "cassandra"],
-        help="Cargar únicamente la base de datos indicada"
+        choices=["mongodb", "cassandra", "dgraph"],
+        help="Cargar únicamente la base indicada"
     )
 
     args = parser.parse_args()
@@ -534,7 +810,7 @@ def main():
     if args.solo is None or args.solo == "cassandra":
         poblar_cassandra(datos)
 
-    if args.solo is None:
+    if args.solo is None or args.solo == "dgraph":
         poblar_dgraph(datos)
 
     print("=== PROCESO FINALIZADO ===")
@@ -542,4 +818,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

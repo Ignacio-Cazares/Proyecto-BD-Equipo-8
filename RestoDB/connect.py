@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 from cassandra.cluster import Cluster
+import pydgraph
 
 
 def connect_mongodb():
