@@ -785,8 +785,6 @@ def poblar_dgraph(datos):
             stub.close()
 
 
-
-
 def main():
     parser = argparse.ArgumentParser(
         description="Carga de datos de RestoDB"
